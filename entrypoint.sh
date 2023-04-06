@@ -33,6 +33,7 @@ exit_val="0"
 echo "rcfile_option=${rcfile_option}"
 echo "INPUT_PYLINT_ARGS=${INPUT_PYLINT_ARGS}"
 echo "INPUT_GLOB_PATTERN=${INPUT_GLOB_PATTERN}"
+echo "INPUT_REVIEWDOG_FLAGS=${INPUT_REVIEWDOG_FLAGS}"
 
 ls -alt
 cmd_line="pylint --score n ${rcfile_option} ${INPUT_PYLINT_ARGS} ${INPUT_GLOB_PATTERN} 2>&1"
