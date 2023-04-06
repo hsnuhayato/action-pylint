@@ -34,6 +34,7 @@ echo "rcfile_option=${rcfile_option}"
 echo "INPUT_PYLINT_ARGS=${INPUT_PYLINT_ARGS}"
 echo "INPUT_GLOB_PATTERN=${INPUT_GLOB_PATTERN}"
 echo "INPUT_REVIEWDOG_FLAGS=${INPUT_REVIEWDOG_FLAGS}"
+echo "REVIEWDOG_GITHUB_API_TOKEN=${REVIEWDOG_GITHUB_API_TOKEN}"
 
 ls -alt
 cmd_line="pylint --score n ${rcfile_option} ${INPUT_PYLINT_ARGS} ${INPUT_GLOB_PATTERN} 2>&1 | /tmp/reviewdog -efm=\"%f:%l:%c: %m\" -name=${INPUT_TOOL_NAME} -reporter=${INPUT_REPORTER}  -filter-mode=${INPUT_FILTER_MODE} -fail-on-error=${INPUT_FAIL_ON_ERROR}  -level=${INPUT_LEVEL}  ${INPUT_REVIEWDOG_FLAGS}"
