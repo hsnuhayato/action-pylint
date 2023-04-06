@@ -48,8 +48,8 @@ pylint --score n ${rcfile_option} ${INPUT_PYLINT_ARGS} ${INPUT_GLOB_PATTERN} 2>&
     -level="${INPUT_LEVEL}" \
     ${INPUT_REVIEWDOG_FLAGS} || exit_val="$?"
 
-echo "[action-pylint] Clean up reviewdog..."
-rm /tmp/reviewdog
+#echo "[action-pylint] Clean up reviewdog..."
+#rm /tmp/reviewdog
 
 if [[ "${exit_val}" -ne '0' ]]; then
   exit 1
