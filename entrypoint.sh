@@ -36,7 +36,7 @@ echo "INPUT_GLOB_PATTERN=${INPUT_GLOB_PATTERN}"
 echo "INPUT_REVIEWDOG_FLAGS=${INPUT_REVIEWDOG_FLAGS}"
 
 ls -alt
-cmd_line="pylint --score n ${rcfile_option} ${INPUT_PYLINT_ARGS} ${INPUT_GLOB_PATTERN} 2>&1"
+cmd_line="pylint --score n ${rcfile_option} ${INPUT_PYLINT_ARGS} ${INPUT_GLOB_PATTERN} 2>&1 | /tmp/reviewdog -efm=\"%f:%l:%c: %m\" -name=${INPUT_TOOL_NAME} -reporter=${INPUT_REPORTER}  -filter-mode=${INPUT_FILTER_MODE} -fail-on-error=${INPUT_FAIL_ON_ERROR}  -level=${INPUT_LEVEL}  ${INPUT_REVIEWDOG_FLAGS}"
 echo ${cmd_line}
 
 pylint --score n ${rcfile_option} ${INPUT_PYLINT_ARGS} ${INPUT_GLOB_PATTERN} 2>&1 | # Removes ansi codes see https://github.com/reviewdog/errorformat/issues/51
